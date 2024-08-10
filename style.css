@@ -124,7 +124,8 @@ hr {
 .number,
 .symbol,
 .operator,
-.deci {
+.deci,
+.func {
   text-align: center;
   align-content: center;
   width: 50px;
