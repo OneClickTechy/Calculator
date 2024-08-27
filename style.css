@@ -4,6 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
   }
@@ -124,3 +125,26 @@ body {
     align-items: center;
     align-content: center;
   }
+
+  /* buy me a coffee */
+  .footer-content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .buy-coffee-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .coffee-icon {
+    width: 100px;
+    height: 100px;
+    margin-right: 8px;
+    background-color: transparent;
+  }
+  
