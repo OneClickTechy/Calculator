@@ -49,6 +49,8 @@ Simply enter the expression you want to evaluate, and the result will be display
 
 ## Future Enhancements
 
+- [ ] Add input from keyboard
+- [ ] Add backspace function
 - [ ] Add scientific functions (sin, cos, tan, etc.)
 - [ ] Support for more complex expressions
 - [ ] Improve UI/UX with animations and themes
