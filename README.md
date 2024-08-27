@@ -13,13 +13,13 @@ A fully functional calculator built using HTML, CSS, and JavaScript that support
 
 ![Calculator Screenshot](./project_calculator.png)
 
-Try the calculator live [here]([your-live-demo-link](https://oneclicktechy.github.io/Calculator/)).
+Try the calculator live [here](https://oneclicktechy.github.io/Calculator/).
 
 ## Installation
 
 1. Clone the repository:
     ```bash
-    git clone [https://github.com/yourusername/calculator.git](https://github.com/OneClickTechy/Calculator.git)
+    git clone https://github.com/OneClickTechy/Calculator.git
     ```
 2. Navigate to the project directory:
     ```bash
