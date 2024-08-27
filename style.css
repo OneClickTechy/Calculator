@@ -33,6 +33,7 @@ body {
   .calc-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
     gap: 1px;
   }
 
@@ -46,6 +47,12 @@ body {
   }
   .calc-btn.red{
     background-color: rgba(255, 0, 0, 0.562);
+  }
+  .calc-btn.red:hover{
+    background-color: rgba(255, 0, 0, 0.651);
+  }
+  .calc-btn.red:active{
+    background-color: rgba(255, 0, 0, 0.76);
   }
 
   .calc-btn:hover {
@@ -63,17 +70,21 @@ body {
     color: white;
   }
 
-  .calc-btn.operator:hover {
+  .calc-btn.operator:hover,
+  .calc-btn.operator-percentage:hover,
+  .calc-btn.calculate:hover {
     background-color: #e09;
   }
 
-  .calc-btn.operator:active {
+  .calc-btn.operator:active,
+  .calc-btn.operator-percentage:active,
+  .calc-btn.calculate:active {
     background-color: #d08;
   }
 
-  .calc-btn.double-width {
+  /* .calc-btn.double-width {
     grid-column: span 2;
-  }
+  } */
 
   .calc-btn.sub {
     font-size: 0.75em;

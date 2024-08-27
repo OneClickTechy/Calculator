@@ -8,6 +8,7 @@ let parenthesesBug = 0;
 
 //add event listener to calc keys
 keys.addEventListener('click', (e) => {
+   
     const { target } = e;
     const { value } = target;
 
@@ -120,7 +121,7 @@ keys.addEventListener('click', (e) => {
         expression = [];
         parenthesesBug = 0;
         display.innerText = null;
-    }
+    }else if(value === '⌫')
     console.log('buffer :', buffer);
     console.log('exp : ', expression);
     console.log('parC', parenthesesBug);
@@ -151,7 +152,7 @@ function parenthesesBugCheck(array) {
 //splicer function uses: split the array from ( to ) and calculate inner values and return single value
 function splicer(array){
     while(array.includes('(')){
-    if(!casetest1.includes('(')) {
+    if(!array.includes('(')) {
      console.log('no ()');   
     }
     let obi = array.lastIndexOf('(');
@@ -171,7 +172,6 @@ function splicer(array){
 }
     return array;
 }
-console.log(calculator(splicer(casetest1)));
 
 function calculator(array) {
     let ans;
