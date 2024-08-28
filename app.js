@@ -246,7 +246,6 @@ function calculator(array) {
     }
 
     // The final result should be the only element left in the array
-    if(buffer === '') true;
     return array[0];
 }
 
