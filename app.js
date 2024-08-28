@@ -121,7 +121,50 @@ keys.addEventListener('click', (e) => {
         expression = [];
         parenthesesBug = 0;
         display.innerText = null;
-    }else if(value === '⌫')
+    }else if(value === '⌫'){//if value is backspace
+        console.log('backspace is triggered');
+        if(buffer !== ''){//delete from buffer if buffer is not empty
+            
+            console.log('delete from buffer - ', buffer);
+            const stringSplitPop = buffer.split('');
+            stringSplitPop.pop();
+            console.log(stringSplitPop);
+            buffer = stringSplitPop.join('');
+            console.log('after delete', buffer);
+        }else if(buffer === '' && expression.length > 0){//if expression have some value
+            console.log('buffer is empty and delete from -', expression);
+            if(expression[expression.length -1].match(/\(/)){
+                console.log('remove from array - ' , expression);
+                expression.pop();
+                console.log('after delete', expression);
+                console.log('before :',parenthesesBug);
+                parenthesesBug--;
+                console.log('after :',parenthesesBug);
+                
+            }
+            else if(expression[expression.length -1].match(/\)/)){
+                console.log('remove from array - ' , expression);
+                expression.pop();
+                console.log('after delete', expression);
+                console.log('before :',parenthesesBug);
+                parenthesesBug++;
+                console.log('after :',parenthesesBug);
+            }else{
+                console.log('in else');
+                    if(expression[expression.length-1].length === 1){
+                        expression.pop();
+                    }else if(expression[expression.length-1].length>1){
+                    console.log(expression);
+                    const lastEl = expression[expression.length-1].split('');
+                    console.log(lastEl);
+                    lastEl.pop();
+                    console.log(lastEl);
+                    expression.splice(-1,1,lastEl.join(''));
+                    console.log(expression);
+                    }
+            }
+        }
+    }
     console.log('buffer :', buffer);
     console.log('exp : ', expression);
     console.log('parC', parenthesesBug);
@@ -203,35 +246,7 @@ function calculator(array) {
     }
 
     // The final result should be the only element left in the array
+    if(buffer === '') true;
     return array[0];
 }
 
-//test cases from chatgpt to check my logic is correct or not
-// Test cases array
-const testCases = [
-    { expression: ['2', '+', '3'], expected: 5 },               // Simple addition
-    { expression: ['10', '-', '5'], expected: 5 },              // Simple subtraction
-    { expression: ['4', '*', '5'], expected: 20 },              // Simple multiplication
-    { expression: ['20', '/', '4'], expected: 5 },              // Simple division
-    { expression: ['2', '+', '3', '*', '4'], expected: 14 },    // BODMAS rule
-    { expression: ['(', '2', '+', '3', ')', '*', '4'], expected: 20 }, // Parentheses with multiplication
-    { expression: ['10', '+', '2', '*', '6', '/', '3'], expected: 14 }, // Complex expression
-    { expression: ['10', '/', '2', '*', '(', '3', '+', '2', ')'], expected: 25 }, // Mixed operations
-    { expression: ['(', '10', '+', '2', ')', '*', '(', '3', '+', '4', ')'], expected: 84 }, // Nested parentheses
-    { expression: ['100', '-', '(', '50', '/', '2', ')'], expected: 75 } // Subtraction with division
-];
-
-// Function to test the calculator
-function testCalculator() {
-    testCases.forEach((test, index) => {
-        const result = calculator(splicer(test.expression));
-        const passed = result === test.expected;
-
-        console.log(`Test Case ${index + 1}: ${test.expression.join(' ')} = ${result}`);
-        console.log(passed ? 'Passed' : `Failed (Expected: ${test.expected})`);
-        console.log('-----------------------------------------');
-    });
-}
-
-// Run the test
-testCalculator();
