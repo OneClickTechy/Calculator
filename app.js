@@ -171,7 +171,6 @@ keys.addEventListener('click', (e) => {
 
 display.innerText = expression.join('') + ' ' + buffer;
 })
-const array = ['(', ')', '('];
 
 //parenthesis balance checker function
 function parenthesesBugCheck(array) {
@@ -207,11 +206,11 @@ function splicer(array){
         }
     }
     let tempArr = array.slice(obi+1, cbi);
-    let result = calculator(tempArr);
-    console.log(result);
+    let result = calculator(tempArr).toString();
+    console.log('result : ',result, typeof result);
     console.log(obi, cbi);
     const count = cbi - obi + 1;
-    array.splice(obi, count, String(result));
+    array.splice(obi, count, result);
 }
     return array;
 }
@@ -246,6 +245,7 @@ function calculator(array) {
     }
 
     // The final result should be the only element left in the array
-    return array[0];
+    array[0] = array[0].toString()
+    return array[0] ;
 }
 
