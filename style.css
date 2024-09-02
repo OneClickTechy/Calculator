@@ -1,204 +1,44 @@
-:root {
-  --bg-color-light: #f4f4f4;
-  --bg-color-dark: #333;
-  --text-color-light: #333;
-  --text-color-dark: #f4f4f4;
-  --calc-bg-light: #fff;
-  --calc-bg-dark: #444;
-  --calc-display-bg-light: #333;
-  --calc-display-bg-dark: #222;
-  --button-bg-light: #eee;
-  --button-bg-dark: #555;
-  --button-hover-light: #ddd;
-  --button-hover-dark: #666;
-  --button-active-light: #ccc;
-  --button-active-dark: #777;
-  --operator-bg-light: #f0a;
-  --operator-bg-dark: #b06;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-color-light);
-  color: var(--text-color-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
+*{
   margin: 0;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0.5px solid black;
 }
+:root{
+  --primary-color: hsl(0, 0%, 100%);
+  --secondary-color: hsl(0, 0%, 79%);
+  --text-color: rgb(23, 21, 24);
+  --text-dark-green: rgb(48, 167, 1);
+  --text-light-green: rgb(63, 216, 3);
+  --text-red: rgb(255, 46, 46);
+  --default-font: Arial, Helvetica, sans-serif;
 
-body[data-theme="dark"] {
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
 }
-
-main {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+main{
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--default-font);
 }
-
-.calc-container {
-  background-color: var(--calc-bg-light);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-body[data-theme="dark"] .calc-container {
-  background-color: var(--calc-bg-dark);
-}
-
-.calc-display {
-  background-color: var(--calc-display-bg-light);
-  color: var(--text-color-dark);
-  font-size: 2em;
-  padding: 20px;
-  text-align: right;
-  border-bottom: 1px solid #ccc;
-}
-
-body[data-theme="dark"] .calc-display {
-  background-color: var(--calc-display-bg-dark);
-  color: var(--text-color-dark);
-}
-
-.calc-buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-}
-
-.calc-btn {
-  background-color: var(--button-bg-light);
-  border: none;
-  padding: 20px;
-  font-size: 1.5em;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-body[data-theme="dark"] .calc-btn {
-  background-color: var(--button-bg-dark);
-  color: var(--text-color-dark);
-}
-
-.calc-btn:hover {
-  background-color: var(--button-hover-light);
-}
-
-body[data-theme="dark"] .calc-btn:hover {
-  background-color: var(--button-hover-dark);
-}
-
-.calc-btn:active {
-  background-color: var(--button-active-light);
-}
-
-body[data-theme="dark"] .calc-btn:active {
-  background-color: var(--button-active-dark);
-}
-
-.calc-btn.operator,
-.calc-btn.operator-percentage,
-.calc-btn.calculate {
-  background-color: var(--operator-bg-light);
-  color: white;
-}
-
-body[data-theme="dark"] .calc-btn.operator,
-body[data-theme="dark"] .calc-btn.operator-percentage,
-body[data-theme="dark"] .calc-btn.calculate {
-  background-color: var(--operator-bg-dark);
-}
-
-.calc-btn.full-width {
-  grid-column: span 4;
-}
-
-@media (max-width: 600px) {
-  .calc-display {
-    font-size: 1.5em;
-    padding: 15px;
-  }
-
-  .calc-btn {
-    padding: 15px;
-    font-size: 1.2em;
-  }
-}
-
-@media (max-width: 400px) {
-  .calc-display {
-    font-size: 1.2em;
-    padding: 10px;
-  }
-
-  .calc-btn {
-    padding: 10px;
-    font-size: 1em;
-  }
-
-  .calc-btn.full-width {
-    grid-column: span 4;
-  }
-}
-
-.flex {
+.header{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  flex-direction: column;
   gap: 1rem;
 }
 
-.switch-container {
-  width: 40px;
-  height: 15px;
-  background-color: gray;
-  border-radius: 20px;
-  padding: 0.2rem;
-  cursor: pointer;
-}
-
-.switch {
-  width: 15px;
-  height: 15px;
-  background-color: black;
-  border-radius: 50%;
-  transition-duration: 0.2s;
-  transition-property: all;
-  transition-timing-function: linear;
-}
-
-.switch.active {
-  transform: translateX(150%);
-}
-
-body[data-theme="dark"] .switch {
-  background-color: white;
-}
-
-.footer-content {
+/* switch icon */
+.text-center{
   text-align: center;
-  padding: 20px;
+}
+.toggle-switch{
+  display: inline-flex; 
+  gap: 1rem; 
+  padding: 1rem;
+  justify-content: flex-end;
 }
 
-.buy-coffee-link {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  font-size: 16px;
+/* footer contents */
+img.coffee-icon{
+  width: 150px;
+  height: 80px;
 }
 
-.coffee-icon {
-  width: 100px;
-  height: 100px;
-  margin-right: 8px;
-  background-color: transparent;
-}
