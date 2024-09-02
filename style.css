@@ -83,9 +83,9 @@ body {
     background-color: #d08;
   }
 
-  /* .calc-btn.double-width {
-    grid-column: span 2;
-  } */
+  .calc-btn.full-width {
+    grid-column: span 4;
+  } 
 
   .calc-btn.sub {
     font-size: 0.75em;
