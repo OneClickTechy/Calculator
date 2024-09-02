@@ -5,16 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-theme="light">
   <main>
+    <header class="flex">
+      <h2>Color mode:</h2>
+      <div class="switch-container">
+        <div class="switch"></div>
+      </div>
+    </header>
     <section>
       <h1>Calculator</h1>
       <div class="calc-container">
-        <div class="calc-display">
-        </div>
+        <div class="calc-display">0</div>
         <div class="calc-buttons">
           <button type="button" class="calc-btn clear red" value="C">C</button>
           <button type="button" class="calc-btn" value="()">&lpar;&rpar;</button>
@@ -37,27 +42,20 @@
           <button type="button" class="calc-btn" value=".">&dot;</button>
           <button type="button" class="calc-btn operator" value="+">&plus;</button>
           <button type="button" class="calc-btn calculate full-width" value="=">&equals;</button>
-          
-          <!-- <button type="button" class="calc-btn square" value="&radic;">&radic;</button>
-          <button type="button" class="calc-btn square" value="x&sup2;">x&sup2;</button>
-          <button type="button" class="calc-btn square" value="x&sup3;">x&sup3;</button> -->
-
-
         </div>
       </div>
     </section>
   </main>
   <footer>
-   <div class="footer-content">
+    <div class="footer-content">
       <a href="https://buymeacoffee.com/oneclicktechy" target="_blank" class="buy-coffee-link">
         <img src="./bmc-button.svg" alt="Buy Me a Coffee" class="coffee-icon">
       </a>
     </div>
   </footer>
-  
-  <script src="./app.js"></script>
-  <!-- Add this script to your HTML file -->
 
+  <script src="./app.js"></script>
+  <script src="./switch.js"></script>
 </body>
 
 </html>
