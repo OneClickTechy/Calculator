@@ -15,6 +15,10 @@ function cumFunc(event) {
 
   if (/\d/.test(value)) {
     //if enter number
+    if(buffer === '' && (/(^\-?\d+(\.\d+)?$)/).test(expression[expression.length-1])){
+      console.log('after calc reset begin');
+      expression = [];
+    }
     buffer += value;
     console.log(buffer);
   } else if (value === ".") {
@@ -33,10 +37,7 @@ function cumFunc(event) {
   } else if (target.classList.contains("operator")) {
     //if enter operator
     console.log("operator" + value);
-    if (
-      buffer !== "" ||
-      /^-?\d+(\.\d)?$/.test(expression[expression.length - 1])
-    ) {
+    if (buffer !== "") {
       console.log("buffer pushed");
       expression.push(buffer);
       console.log(expression);
@@ -44,7 +45,12 @@ function cumFunc(event) {
       console.log(`${buffer} is empty`);
       expression.push(value);
       console.log(expression);
-    } else if (buffer === "" && expression[expression.length - 1] === ")") {
+    }else if(/(^\-?\d+(\.\d+)?$)/.test(expression[expression.length - 1])){
+      console.log('new calculation begin and start from expression & buffer is empty');
+      expression.push(value);
+      console.log('operator pushed ', value);
+      console.log(expression);
+    }else if (buffer === "" && expression[expression.length - 1] === ")") {
       expression.push(value);
     }
   } else if (target.classList.contains("operator-percentage")) {
