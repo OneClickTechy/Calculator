@@ -1,5 +1,5 @@
   const display = document.querySelector(".calc-display");
-  const keys = document.querySelector(".calc-buttons");
+  const keys = document.querySelector(".calc-container");
 
   let expression = [];
   let buffer = "";
@@ -11,7 +11,7 @@
   function cumFunc(event) {
     const { target } = event;
     const { value } = target;
-
+console.log(target.parentElement.value);
     if (/\d/.test(value)) {
       // Handle number input
       if (buffer === '' && (/(^\-?\d+(\.\d+)?$)/).test(expression[expression.length - 1])) {
@@ -82,7 +82,7 @@
       // Handle clear
       clearFunc();
       display.innerText = "";
-    } else if (value === "⌫") {
+    } else if (value === "⌫" || target.parentElement.value === '⌫') {
       // Handle backspace
       if (buffer !== "") {
         buffer = buffer.slice(0, -1);
