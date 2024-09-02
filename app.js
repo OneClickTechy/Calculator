@@ -46,15 +46,41 @@ console.log(target.parentElement.value);
         expression.push(buffer);
         buffer = "";
       }
-      if (parenthesesCount === 0 && expression.length === 0) {
+      if ((parenthesesCount === 0) & (expression.length === 0)) {
+        //from begin () is clicked
+        expression.push("(");
+        console.log(expression);
+        parenthesesCount++;
+      } else if (
+        expression[expression.length - 1] === "/" ||
+        expression[expression.length - 1] === "*" ||
+        expression[expression.length - 1] === "+" ||
+        expression[expression.length - 1] === "-"
+      ) {
         expression.push("(");
         parenthesesCount++;
-      } else if (/[\d)]/.test(expression[expression.length - 1])) {
-        expression.push(")");
-        parenthesesCount--;
-      } else {
+      } else if (/^-?\d+(\.\d)?$/.test(expression[expression.length - 1])) {
+        //if click after number
+        if (parenthesesCount > 0) {
+          expression.push(")");
+          parenthesesCount--;
+          console.log(expression);
+        } else if (parenthesesCount === 0) {
+          expression.push("*", "(");
+          parenthesesCount++;
+          console.log(expression);
+        }
+      } else if (expression[expression.length - 1] === "(") {
         expression.push("(");
         parenthesesCount++;
+      } else if (expression[expression.length - 1] === ")") {
+        if (parenthesesCount > 0) {
+          expression.push(")");
+          parenthesesCount--;
+        } else if (parenthesesCount === 0) {
+          expression.push("*", "(");
+          parenthesesCount++;
+        }
       }
     } else if (value === "+|-") {
       // Handle sign change
