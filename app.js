@@ -99,16 +99,6 @@ function cumFunc(event) {
   display.innerText = expression.join("") + buffer;
 }
 
-// Parentheses balance checker
-function parenthesesBugCheck(array) {
-  let count = 0;
-  array.forEach((char) => {
-    if (char === "(") count++;
-    if (char === ")") count--;
-  });
-  return count === 0;
-}
-
 // Splicer function to handle parentheses
 function splicer(array) {
   while (array.includes("(")) {
