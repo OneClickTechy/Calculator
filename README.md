@@ -52,6 +52,7 @@ Simply enter the expression you want to evaluate, and the result will be display
 - **index.html**: The main HTML file.
 - **styles.css**: The CSS file for styling the calculator.
 - **script.js**: The JavaScript file containing the calculator logic.
+- **switch.js**: The JavaScript file containing the color theme switcher logic.
 
 ## Future Enhancements
 
