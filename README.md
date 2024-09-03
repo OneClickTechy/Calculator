@@ -11,24 +11,30 @@ A fully functional calculator built using HTML, CSS, and JavaScript that support
 
 ## Demo
 
-![Calculator Screenshot](./project_calculator.png)
+### light mode
+
+![Calculator Screenshot](./demo/light.png)
+
+### dark mode
+
+![Calculator Screenshot](./demo/dark.png)
 
 Try the calculator live [here](https://oneclicktechy.github.io/Calculator/).
 
 ## Installation
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/OneClickTechy/Calculator.git
-    ```
+   ```bash
+   git clone https://github.com/OneClickTechy/Calculator.git
+   ```
 2. Navigate to the project directory:
-    ```bash
-    cd calculator
-    ```
+   ```bash
+   cd calculator
+   ```
 3. Open `index.html` in your preferred browser:
-    ```bash
-    open index.html
-    ```
+   ```bash
+   open index.html
+   ```
 
 ## Usage
 
@@ -50,10 +56,11 @@ Simply enter the expression you want to evaluate, and the result will be display
 ## Future Enhancements
 
 - [ ] Add input from keyboard
+- [x] Dark and light mode
 - [x] Add backspace function
 - [ ] Add scientific functions (sin, cos, tan, etc.)
 - [ ] Support for more complex expressions
-- [ ] Improve UI/UX with animations and themes
+- [x] Improve UI/UX with animations and themes
 
 ## Contributing
 
@@ -67,4 +74,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Inspired by various online calculator projects and tutorials.
 - Special thanks to the open-source community for providing great resources.
-
